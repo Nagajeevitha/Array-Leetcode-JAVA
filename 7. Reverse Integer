@@ -1,0 +1,25 @@
+class Solution {
+    public int reverse(int x) {
+        long rev =0;
+        int d,f=0;
+        if(x<0){
+            x*=-1;
+            f=1;
+        }
+        while(x>0){
+            d=x%10;
+            rev = (rev*10)+d;
+            x/=10;
+        }
+        if(f==1)
+            rev*=-1;
+        int min = -(int)Math.pow(2,31);
+        int max = (int)Math.pow(2,31)-1;
+        int ans = (int)rev;
+        if(rev>=min && rev<=max)
+            return ans;
+        else 
+            return 0;
+
+    }
+}
